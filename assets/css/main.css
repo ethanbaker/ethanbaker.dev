@@ -521,7 +521,7 @@ header {
   font-family: Raleway;
   letter-spacing: 0.2em;
   padding-left: 1.5em;
-  content: 'View on gitlab';
+  content: 'View on GitHub';
   font-weight: bold;
 }
 
@@ -579,13 +579,13 @@ header {
 }
 
 #projects .page-3 {
-  background-image: url(/assets/images/project3.jpg);
+  background-image: url(/assets/images/project3.png);
   background-size: 100%, 100%;
 }
 
 #projects .page-4 {
-  background-image: url(/assets/images/project4.jpg);
-  background-size: 100%, 100%;
+  background-image: url(/assets/images/project4.png);
+  background-size: 100%, 110%;
 }
 
 #projects .page-5 {
@@ -1397,16 +1397,16 @@ background: url(/assets/images/project2.jpg);
 background: url(/assets/images/project2.jpg);
 }
 40% {
-background: url(/assets/images/project3.jpg);
+background: url(/assets/images/project3.png);
 }
 55% {
-background: url(/assets/images/project3.jpg);
+background: url(/assets/images/project3.png);
 }
 60% {
-background: url(/assets/images/project4.jpg);
+background: url(/assets/images/project4.png);
 }
 75% {
-background: url(/assets/images/project4.jpg);
+background: url(/assets/images/project4.png);
 }
 80% {
 background: url(/assets/images/project5.jpg);
