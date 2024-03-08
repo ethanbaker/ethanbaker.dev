@@ -3,12 +3,6 @@
   
   Adapted from:
     https://github.com/othneildrew/Best-README-Template/
-
-Here are different preset "variables" that you can search and replace in this template.
-`ethanbaker.dev`
-`project_title`
-`project_description`
-`documentation_link`
 -->
 
 <div id="top"></div>
@@ -23,24 +17,12 @@ Here are different preset "variables" that you can search and replace in this te
 
 <br><br>
 
-<!-- PROJECT SPECIFIC BUTTONS -->
-<!-- Netlify buttons:
-[![Netlify Status](https://duck.com/lite?kd=-1&kp=-1&q=![Netlify Status)](https://duck.com/lite?kd=-1&kp=-1&q=Netlify Status))
--->
-
-<!-- Golang specific buttons:
-[![GoDoc](https://godoc.org/github.com/ethanbaker/ethanbaker.dev?status.svg)](https://godoc.org/github.com/ethanbaker/ethanbaker.dev)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ethanbaker/ethanbaker.dev)](https://goreportcard.com/report/github.com/ethanbaker/ethanbaker.dev)
--->
-
 <!-- PROJECT LOGO -->
 <br>
 <div align="center">
-  <!--
-  <a href="https://github.com/ethanbaker/ethanbaker.dev">
-    <img src="" alt="Logo" width="80" height="80">
+  <a href="https://ethanbaker.dev">
+    <img src="./docs/favicon.ico" alt="Logo" width="80" height="80">
   </a>
-  -->
 
   <h3 align="center">ethanbaker.dev</h3>
 
@@ -70,14 +52,7 @@ Here are different preset "variables" that you can search and replace in this te
 <!-- ABOUT -->
 ## About
 
-This repository contains all of the static websites relating to my personal
-website, [ethanbaker.dev](https://ethanbaker.dev). All static sites have their
-own associated folder. Currently, the following sites exist in this repository:
-
-* [ethanbaker.dev](https://ethanbaker.dev): My personal site to broadcast my
-  existence and talents to the masses
-* [reference.ethanbaker.dev](https://reference.ethanbaker.dev): A site used as
-  a reference for consistent styles across my personal pages
+This repository contains my personal website, [ethanbaker.dev](https://ethanbaker.dev).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -85,7 +60,6 @@ own associated folder. Currently, the following sites exist in this repository:
 ### Built With
 
 * [HTML, CSS, JS](https://en.wikipedia.org/wiki/Front-end_web_development)
-* [Netlify](https://netlify.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -93,8 +67,7 @@ own associated folder. Currently, the following sites exist in this repository:
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Index site 2.0
-- [ ] Complete reference site
+- [ ] Revamp site with Angular
 
 See the [open issues][issues-url] for a full list of proposed features (and known issues).
 
@@ -106,8 +79,7 @@ See the [open issues][issues-url] for a full list of proposed features (and know
 
 This repository uses the Apache 2.0 License.
 
-This repository is free to use for private/public use, as long as an original
-copyright use notice is used.
+This repository is free to use for private/public use, as long as an original copyright use notice is used.
 
 You can find more information in the `LICENSE` file.
 
