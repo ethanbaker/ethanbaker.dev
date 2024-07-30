@@ -43,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/ethanbaker.dev/'
+          path: './dist/ethanbaker.dev/browser/'
 
       - name: Deploy to GitHub Pages
         id: deployment
