@@ -1,0 +1,88 @@
+@import 'variables';
+@import 'mixins';
+@import 'breakpoints';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 10vh;
+
+    width: 100%;
+
+    h2 {
+        width: 90%;
+
+        margin: 0;
+
+        text-wrap: wrap;
+        text-align: center;
+    }
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: max-content;
+    width: 92.5%;
+
+    margin: auto;
+
+    @include for-tablet-portrait-up {
+        align-items: flex-start;
+    }
+
+    @include for-tablet-landscape-up {
+        width: 90%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+.body-container .story-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: auto;
+    margin-top: 5vh;
+
+    h3 {
+        margin-bottom: 0;
+        margin-top: 5vh;
+    }
+}
+
+.body-container .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    img {
+        border: solid 2px var(--line-color);
+
+        margin-top: 10vh;
+        max-height: 40vh;
+
+        @include for-tablet-portrait-up {
+            max-height: 60vh;
+        }
+
+        @include for-desktop-up {
+            max-height: 85vh;
+        }
+    }
+}

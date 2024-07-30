@@ -27,7 +27,7 @@
   <h3 align="center">ethanbaker.dev</h3>
 
   <p align="center">
-    All static pages for my personal website
+    My personal website, created and maintained in Angular and GitHub Pages
   </p>
 </div>
 

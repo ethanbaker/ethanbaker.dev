@@ -1,0 +1,38 @@
+// Define Palettes
+$primary-palette: mat.$azure-palette;
+$accent-palette: mat.$red-palette;
+
+// Define application scale
+$scale: 0;
+
+// Define themes
+$light-theme: mat.define-theme((
+    color: (
+        theme-type: light,
+        primary: $primary-palette,
+        tertiary: $accent-palette,
+    ),
+    density: (
+        scale: $scale,
+    )
+));
+
+$dark-theme: mat.define-theme((
+    color: (
+        theme-type: dark,
+        primary: $primary-palette,
+        tertiary: $accent-palette,
+    ),
+    density: (
+        scale: $scale,
+    )
+));
+
+// Set the theme
+:root {
+    @include mat.all-component-themes($light-theme);
+
+    .dark-mode {
+        @include mat.all-component-colors($dark-theme);
+    }
+}

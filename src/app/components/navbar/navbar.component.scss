@@ -1,0 +1,166 @@
+@import 'variables';
+@import 'mixins';
+@import 'breakpoints';
+
+.wrapper {
+    width: 100vw;
+    padding: 0;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+
+    border-bottom: solid 4px var(--link-color);
+
+    z-index: 8;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 80%;
+    height: 100%;
+
+    margin: auto;
+}
+
+mat-icon.global-small {
+    width: min-content;
+    height: min-content;
+
+    font-size: 36px;
+}
+
+.left-nav {
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+
+    position: relative;
+    left: 0;
+
+    height: 100%;
+
+    img {
+        height: 100%;
+        width: auto;
+
+        cursor: pointer;
+
+        margin-right: 3vw;
+
+        &::before {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    span {
+        font-family: $sans-font;
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+        font-weight: bolder;
+
+        cursor: pointer;
+
+        @include for-tablet-portrait-up {
+            font-size: 1.3em;
+        }
+
+        @include for-tablet-landscape-up {
+            font-size: 1.4em;
+        }
+    }
+}
+
+.right-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 100%;
+
+    position: relative;
+    right: 0;
+
+    a[mat-stroked-button] {
+        border-radius: $border-radius;
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+        border: solid 1px var(--line-color);
+    }
+
+    a, mat-slide-toggle {
+        margin-left: 2em;
+    }
+}
+
+.menu.global-small {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 9;
+
+    .menu-container {
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden hidden;
+        backdrop-filter: blur(10px);
+        background: rgba(134, 143, 150, 0.7);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 1.5vh;
+
+            border-radius: $border-radius;
+
+            background-color: var(--bg-color);
+
+            min-width: 40vw;
+            min-height: 40vh;
+            height: fit-content;
+
+            mat-list-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                padding: 1em;
+
+                a {
+                    color: var(--text-color);
+                }
+
+                &:last-child {
+                    position: relative;
+                    bottom: 0;
+                }
+            }
+
+            a, span {
+                width: 100%;
+            }
+
+            mat-icon, mat-slide-toggle {
+                width: min-content;
+                margin: auto;
+            }
+        }
+    }
+}
