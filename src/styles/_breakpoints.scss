@@ -1,0 +1,43 @@
+/**
+ * Breakpoints
+ *
+ *  - for-phone-only:          [0,      599px]
+ *  - for-phone-up:            [0,      inf)
+ *  - for-tablet-portrait-up   [600px,  inf)
+ *  - for-tablet-landscape-up: [900px,  inf)
+ *  - for-desktop-up:          [1200px, inf)
+ *  - for-big-desktop-up:      [1800px, inf)
+ *
+ *  .global-small: hides elements when screen is larger than or equal to 900px
+ *  .global-large: hides elements when screen is smaller than 900px
+ */
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-phone-up {
+  @media (min-width: 0px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .global-small {
+    @include hidden();
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  .global-large {
+    @include hidden();
+  }
+}

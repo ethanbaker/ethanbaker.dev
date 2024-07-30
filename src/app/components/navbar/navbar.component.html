@@ -1,0 +1,84 @@
+<mat-toolbar color="none" class="wrapper">
+  <nav>
+    <div class="left-nav" routerLink="/">
+      <img lazyLoad src="/assets/images/logo.png" alt="logo">
+      <span>ethanbaker.dev</span>
+    </div>
+
+    <mat-icon class="global-small" [inline]="true" (click)="toggleMenu()">menu</mat-icon>
+
+    <div class="right-nav global-large">
+      <a mat-stroked-button routerLink="/">Home</a>
+
+      <a mat-stroked-button routerLink="/about">About</a>
+
+      <!--<a mat-stroked-button routerLink="/contact">Contact</a>-->
+
+      <!--<a mat-stroked-button routerLink="/blog">Blog</a>-->
+
+      <!--
+      <a mat-stroked-button [matMenuTriggerFor]="aboutMenu">About</a>
+      <mat-menu class="menu-content" #aboutMenu="matMenu">
+        <button mat-menu-item [routerLink]="['/about', 'description']">
+          <span>Description</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/about', 'resume']">
+          <span>Resume</span>
+        </button>
+      </mat-menu>
+      -->
+
+      <mat-slide-toggle #switchLarge color="primary" (change)="toggleTheme($event)"
+        [checked]="checked"></mat-slide-toggle>
+    </div>
+  </nav>
+</mat-toolbar>
+
+<div [classList]="menuOpen ? 'menu global-small' : 'menu global-small base-hidden'">
+  <div class="menu-container">
+    <mat-list>
+      <mat-list-item>
+        <a mat-stroked-button routerLink="/" (click)="toggleMenu()">Home</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a mat-stroked-button routerLink="/about" (click)="toggleMenu()">About</a>
+      </mat-list-item>
+
+      <!--
+      <mat-list-item>
+        <a mat-stroked-button routerLink="/contact" (click)="toggleMenu()">Contact</a>
+      </mat-list-item>
+      -->
+
+      <!--
+      <mat-list-item>
+        <a mat-stroked-button routerLink="/blog" (click)="toggleMenu()">Blog</a>
+      </mat-list-item>
+      -->
+
+      <!--
+      <mat-list-item>
+        <a mat-stroked-button [matMenuTriggerFor]="aboutMenuSmall">About</a>
+        <mat-menu class="menu-content" #aboutMenuSmall="matMenu">
+          <button mat-menu-item (click)="toggleMenu()" [routerLink]="['/services', 'prices']">
+            <span>Prices</span>
+          </button>
+          <button mat-menu-item (click)="toggleMenu()" [routerLink]="['/services', 'terms']">
+            <span>Terms of Service</span>
+          </button>
+        </mat-menu>
+      </mat-list-item>
+      -->
+
+      <mat-list-item>
+        <mat-slide-toggle #switchSmall color="primary" (change)="toggleTheme($event)"
+          [checked]="checked"></mat-slide-toggle>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon (click)="toggleMenu()">close</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="wrapper">
+  <img *ngFor="let image of images; let i = index" lazyLoad [src]="image"
+    [ngClass]="{'active': i === currentImageIndex}" class="image-slide">
+</div>

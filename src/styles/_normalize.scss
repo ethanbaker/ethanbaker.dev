@@ -1,0 +1,271 @@
+/**
+ * Normalization
+ *
+ * Numerous rules to standardize styles across all relevant browsers
+ */
+
+/* General Document Element Rules */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  // Prevent changes in font-size after iOS orientation changes
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  // Correct line height in all browsers
+  line-height: 1.15;
+
+  box-sizing: border-box;
+  position: absolute;
+
+  // Make all elements by default not obscure important elements
+  z-index: -1;
+}
+
+
+// General section element rules
+body {
+  // Remove the margin in all browsers
+  margin: 0;
+}
+
+main {
+  // Standardize `main` consistently for IE
+  display: block;
+}
+
+
+h1 {
+  // Standardize font-size and margin in `h1` for contexts in Chrome, Safari, and Firefox
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+
+// General group element rules
+hr {
+  // Standardize box sizing in `hr` for Firefox
+  box-sizing: content-box;
+  height: 0;
+
+
+  // Show overflow in `hr` for Edge and IE
+  overflow: visible;
+}
+
+pre {
+  // Standardize inheritance and scaling in `pre` for all browsers
+  font-family: monospace, monospace;
+
+  // Standardize font-size in `pre` for all browsers
+  font-size: 1em;
+}
+
+// General Text-level Element Rules
+a {
+  // Standardize background-color in `a` for IE
+  background-color: transparent;
+}
+
+abbr[title] {
+  // Standardize no border-bottom in `abbr` for Chrome 57-
+  border-bottom: none;
+
+  // Standardize text-decoration for `abbr` in Chrome, Edge, IE, Opera, and Safari
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b, strong {
+  // Standardize font-weight in `b` and `strong` for Chrome, Edge, and Safari 
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  // Standardize the inheritance and scaling of font-size in `code`, `kbd`, and `samp` for all browsers
+  font-family: monospace, monospace;
+
+  // Standardize the font-size in `code`, `kbd`, and `samp` for all browsers
+  font-size: 1em;
+}
+
+small {
+  // Standardize the font-size in `small` for all browsers
+  font-size: 80%;
+}
+
+sub, sup {
+  // Prevent `sub` and `sup` from affecting the line height for all browsers
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  // Prevent `sub` from affecting the line height for all browsers
+  bottom: -0.25em;
+}
+
+sup {
+  // Prevent `sup` from affecting the line height for all browsers
+  top: -0.5em;
+}
+
+
+// General embedded element rules
+img {
+  // Standardize the border-style in images inside links for IE
+  border-style: none;
+}
+
+
+// General Form Element Rules
+button, input, optgroup, select, textarea {
+  // Standarize the font styles in form elements for all browsers
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+
+  // Standardize the margin in form elements for Firefox and Safari
+  margin: 0;
+}
+
+button, input {
+  // Standardize the overflow visibility in `button` and `input` for Edge
+  overflow: visible;
+}
+
+// Remove the shadow on input fields for iOS
+textarea, input:matches(
+  [type="email"],
+  [type="number"],
+  [type="password"],
+  [type="search"],
+  [type="tel"],
+  [type="text"],
+  [type="url"]
+) {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button, select {
+  // Standardize the inheritance of text-transform for `button` and `select` for Edge, Firefox, and IE
+  text-transform: none;
+}
+
+button,[type="button"],[type="reset"],[type="submit"] {
+  // Correct the inability to style clickable types in iOS and Safari
+  -webkit-appearance: button;
+  appearance: none;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  // Remove the inner border and padding in Firefox.
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  // Restore the focus styles unset by removing inner border and padding above by previous rule
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  // Standardize the padding in `fieldset` for Firefox
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  // Standardize the text-wrapping in `legend` for Edge and IE
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+
+  // Correct the color inheritance from `fieldset` elements in IE
+  color: inherit;
+
+  // Remove padding to stop any `fieldset` inheritance from adding padding
+  padding: 0;
+}
+
+progress {
+  // Standardize the vertical alignment in Chrome, Firefox, and Opera
+  vertical-align: baseline;
+}
+
+textarea {
+  // Remove the default vertical scrollbar in IE 10+
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  // Standardize the box-sizing for types `checkbox` and `radio` in IE 10
+  box-sizing: border-box;
+
+  // Standardize the padding for types `checkbox` and `radio` in IE
+  padding: 0;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  // Standardize the cursor style of increment and decrement buttons for Chrome
+  height: auto;
+}
+
+[type="search"] {
+  // Standardize type `search` appearance for Chrome and Safari
+  -webkit-appearance: textfield;
+  appearance: textfield;
+
+  // Standarize the outline in type `search` for Safari
+  outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+  // Remove inner padding for Chrome and Safari on macOS
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  // Fix the inability to not style clickable types in iOS and Safari
+  -webkit-appearance: button;
+
+  // Standardize font to inherit properties for Safari
+  font: inherit;
+}
+
+
+// General interactive element rules
+details {
+  // Standardize the display of `details` for Edge, IE 10+, and Firefox
+  display: block;
+}
+
+summary {
+  // Standardize the display in `summary` of all browsers
+  display: list-item;
+}
+
+
+// General Misc Element Rules
+template {
+  // Standardize the display in `template` for IE 10+
+  display: none;
+}
+
+[hidden] {
+  // Standardize the `hidden` property for IE 10
+  display: none;
+}

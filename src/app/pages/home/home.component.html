@@ -1,0 +1,64 @@
+<div class="wrapper">
+    <div class="title-container">
+        <h2 class="base">Welcome! I'm Ethan</h2>
+    </div>
+
+    <div class="body-container">
+        <div class="description-container">
+            <div class="image-container">
+                <app-slider></app-slider>
+            </div>
+
+            <div class="about-container">
+                <h3 class="base">My Purpose</h3>
+
+                <app-typing class="typing"></app-typing>
+
+                <p class="base base-text-center">I am a young, driven developer looking to master the many fields of computer science. My
+                    goal is to find innovative solutions to compelling problems across various disciplines. In addition
+                    to my knowledge of diverse coding modalities, I consistently work to improve my knowledge of math,
+                    science and other changing technologies.</p>
+            </div>
+        </div>
+
+        <div class="projects-container">
+            <h3 class="base">My Projects</h3>
+
+            <div class="description-container">
+                <p class="base base-text-center">Click on a project to learn more!</p>
+            </div>
+
+            <lightgallery [settings]="settings" class="light-gallery">
+                <a *ngFor="let image of projectImages; let i = index" class="gallery-item" href="{{image.src}}"
+                    [attr.data-sub-html]="image | generateProjectDescription">
+                    <img alt="Project image {{i}}" [src]="image.src" />
+                    <span>
+                        <p>{{image.title}}</p>
+                    </span>
+                </a>
+            </lightgallery>
+        </div>
+
+        <div class="skills-container">
+            <h3 class="base">My Skills</h3>
+
+            <div class="skill-lists">
+                <ul class="base base-circle">
+                    <li class="base">Full Stack Development</li>
+                    <li class="base">HTML/CSS/JS</li>
+                    <li class="base">Angular/Typescript</li>
+                    <li class="base">Git</li>
+                    <li class="base">Agile Methodology</li>
+                </ul>
+
+                <ul class="base base-circle">
+                    <li class="base">Golang</li>
+                    <li class="base">Java</li>
+                    <li class="base">C/C++</li>
+                    <li class="base">Docker/CI-CD</li>
+                    <li class="base">Linux/Bash</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

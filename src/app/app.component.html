@@ -1,0 +1,30 @@
+<div *ngIf="this.isDarkMode != undefined" class="wrapper mat-app-background">
+  <app-navbar></app-navbar>
+
+  <router-outlet (activate)="scrollToTop()"></router-outlet>
+
+  <div class="footer-container">
+    <footer>
+      <ul class="icons">
+        <a target="_blank" href="mailto:contact@ethanbaker.dev">
+          <fa-icon [icon]="icons.email"></fa-icon>
+        </a>
+
+        <a target="_blank" href="https://github.com/ethanbaker">
+          <fa-icon [icon]="icons.github"></fa-icon>
+        </a>
+
+        <a target="_blank" href="https://www.linkedin.com/in/ethandbaker/">
+          <fa-icon [icon]="icons.linkedin"></fa-icon>
+        </a>
+
+        <a target="_blank" href="https://x.com/_ethanbaker">
+          <fa-icon [icon]="icons.x"></fa-icon>
+        </a>
+      </ul>
+
+      <p class="text-left compact">© {{ copyright }} Ethan Baker. All rights reserved.</p>
+      <p class="text-left compact">Website created by <a target="_blank" class="base" href="mailto:contact@ethanbaker.dev">contact&#64;ethanbaker.dev</a></p>
+    </footer>
+  </div>
+</div>

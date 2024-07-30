@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+@import 'breakpoints';
+
+.wrapper {
+  font-family: $sans-font;
+  font-size: 1.2em;
+  color: var(--text-color);
+
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  @include for-tablet-landscape-up {
+    font-size: 2em;
+  }
+}
+
+.text {
+  color: var(--link-color);
+}
+
+.cursor {
+  font-family: monospace;
+  font-size: calc(1em + 8px);
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  border-right: 3px solid var(--text-color);
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--text-color); }
+}

@@ -1,0 +1,46 @@
+/**
+ * Global variables
+ * 
+ * Variables used consistently throughout the application
+ *
+ * Font variables:
+ * - serif-font: font used with serif decorations
+ * - sans-font: font used without serif decorations
+ * - monospace-font: font used that is monospaced
+ *
+ * Color variables:
+ * - text-color: color of text
+ * - hover-color: color used on a link/button hover
+ * - bg-color: color of the background
+ * - line-color: color used for lines/borders
+ * - link-color: color used for links
+ */
+
+// Fonts
+$serif-font: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
+$sans-font: 'Bitter', "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans: Droid Sans", "Helvetica Neue", sans-serif;
+$monospace-font: "Courier New", monospace;
+
+// Dark mode
+$dark-text-color: #eeeeee;
+$dark-hover-color: #ff4400;
+$dark-bg-color: #292929;
+$dark-line-color: #474747;
+$dark-link-color: #949494;
+
+// Light mode
+$light-text-color: #292929;
+$light-bg-color: #eeeeee;
+$light-hover-color: #67e1ea;
+$light-line-color: #949494;
+$light-link-color: #474747;
+
+// Default to light mode
+$text-color: $light-text-color;
+$bg-color: $light-bg-color;
+$hover-color: $light-hover-color;
+$line-color: $light-line-color;
+$link-color: $light-link-color;
+
+// Other variables
+$border-radius: 8px;
