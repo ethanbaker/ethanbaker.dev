@@ -31,16 +31,25 @@ export class ConfigService {
   constructor(
     private _storageService: StorageService,
   ) {
-    // Load the item from local storage
-    this._config.next(this._storageService.getItem(environment.localStorageKey) as LocalConfig);
+    const current = this._storageService.getItem(environment.localStorageKey) as LocalConfig;
+    if (current != undefined) {
+      this._config.next(current);
+      return;
+    }
 
-    this._storageService.loadItem(environment.localStorageKey).pipe(tap(
-      (config: LocalConfig) => {
-        if (config != undefined) {
-          // If the config is present, save it
-          this._config.next(config);
+    // Delay 1 second to load the config
+    new Promise((res) => setTimeout(res, 1000)).then(
+      () => {
+        const current = this._storageService.getItem(environment.localStorageKey) as LocalConfig;
+        if (current != undefined) {
+          // If config is present, update it
+          this._config.next(current);
+        } else {
+          // Otherwise, save the default one
+          this._storageService.setItem(environment.localStorageKey, this._config.value);
         }
-      }));
+      });
+
   }
 
   /**
