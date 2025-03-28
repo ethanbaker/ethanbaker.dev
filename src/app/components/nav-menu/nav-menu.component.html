@@ -1,0 +1,16 @@
+<mat-menu #menu>
+    <div *ngFor="let item of items">
+        <!-- Route links -->
+        <button *ngIf="item.type === 'route'" mat-menu-item [routerLink]="item.url" (click)="closeMenu()" (mouseup)="scrollTop()">{{ item.name }}</button>
+
+        <!-- External links -->
+        <a *ngIf="item.type === 'external'" mat-menu-item [href]="item.url" target="_blank">{{ item.name }}</a>
+
+        <!-- Links with submenus -->
+        <div *ngIf="item.type === 'menu' && item.children != undefined && item.children.length > 0">
+            <button mat-menu-item [matMenuTriggerFor]="child.menu">{{ item.name }}</button>
+
+            <app-nav-menu #child [items]="item.children"></app-nav-menu>
+        </div>
+    </div>
+</mat-menu>

@@ -70,19 +70,9 @@ export class ThemeService {
     if (isDarkMode) {
       // Set dark mode
       this.document.body.classList.add("dark-mode");
-      this.document.documentElement.style.setProperty("--bg-color", "#292929");
-      this.document.documentElement.style.setProperty("--text-color", "#eeeeee");
-      this.document.documentElement.style.setProperty("--hover-color", "#ff4400");
-      this.document.documentElement.style.setProperty("--line-color", "#474747");
-      this.document.documentElement.style.setProperty("--link-color", "#949494");
     } else {
       // Set light mode
       this.document.body.classList.remove("dark-mode");
-      this.document.documentElement.style.setProperty("--text-color", "#292929")
-      this.document.documentElement.style.setProperty("--bg-color", "#eeeeee")
-      this.document.documentElement.style.setProperty("--hover-color", "#67e1ea")
-      this.document.documentElement.style.setProperty("--line-color", "#949494")
-      this.document.documentElement.style.setProperty("--link-color", "#474747")
     }
   }
 }

@@ -28,11 +28,31 @@ $dark-theme: mat.define-theme((
     )
 ));
 
-// Set the theme
+// By default, set the theme to light
 :root {
     @include mat.all-component-themes($light-theme);
 
-    .dark-mode {
-        @include mat.all-component-colors($dark-theme);
-    }
+    --text-color: #292929;
+    --bg-color: #fdfbff;
+    --hover-color: #67e1ea;
+    --line-color: #949494;
+    --link-color: #474747;
+
+}
+
+// When the dark-mode class is added to the body, change the theme to dark
+.dark-mode {
+    @include mat.all-component-colors($dark-theme);
+
+    --text-color: #eeeeee;
+    --bg-color: #1a1b1f;
+    --hover-color: #ff4400;
+    --line-color: #474747;
+    --link-color: #949494;
+}
+
+// Update all styles to use the variables
+html {
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
