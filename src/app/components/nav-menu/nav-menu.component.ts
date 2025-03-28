@@ -20,7 +20,7 @@ import { MenuService } from '../../services/menu/menu.service';
     RouterModule,
   ],
   templateUrl: './nav-menu.component.html',
-  styleUrl: './nav-menu.component.scss'
+  styleUrls: ['./nav-menu.component.scss'],
 })
 export class NavMenuComponent {
   /** The nav items to render */
