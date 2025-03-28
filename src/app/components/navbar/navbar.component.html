@@ -1,89 +1,64 @@
 <mat-toolbar color="none" class="wrapper">
   <nav>
+    <!-- Left nav (logo + title) -->
     <div class="left-nav" routerLink="/">
       <img lazyLoad src="/assets/images/logo.png" alt="logo">
       <span>ethanbaker.dev</span>
     </div>
 
-    <mat-icon class="global-small" [inline]="true" (click)="toggleMenu()">menu</mat-icon>
+    <!-- Open menu (on small devices) -->
+    <mat-icon id="menu-toggle" class="global-small" [inline]="true" (click)="openMenu()">menu</mat-icon>
 
+    <!-- List of menu items (on large devices) -->
     <div class="right-nav global-large">
-      <a mat-stroked-button routerLink="/">Home</a>
+      <div *ngFor="let item of schema">
+        <!-- Route links -->
+        <button *ngIf="item.type === 'route'" mat-stroked-button [routerLink]="item.url" (click)="closeMenu()" (mouseup)="scrollTop()">{{ item.name }}</button>
 
-      <a mat-stroked-button routerLink="/about">About</a>
+        <!-- External links -->
+        <a *ngIf="item.type === 'external'" [href]="item.url" target="_blank"><button mat-stroked-button>{{ item.name }}</button></a>
 
-      <a mat-stroked-button target="_blank" href="/assets/files/Ethan Baker - Full Stack Developer Resume.pdf">Resume</a>
+        <!-- Sub-level menus -->
+        <div *ngIf="item.type === 'menu' && item.children != undefined && item.children.length > 0">
+          <button mat-stroked-button [matMenuTriggerFor]="child.menu">{{ item.name }}</button>
 
-      <!--<a mat-stroked-button routerLink="/contact">Contact</a>-->
+          <app-nav-menu #child [items]="item.children"></app-nav-menu>
+        </div>
+      </div>
 
-      <!--<a mat-stroked-button routerLink="/blog">Blog</a>-->
-
-      <!--
-      <a mat-stroked-button [matMenuTriggerFor]="aboutMenu">About</a>
-      <mat-menu class="menu-content" #aboutMenu="matMenu">
-        <button mat-menu-item [routerLink]="['/about', 'description']">
-          <span>Description</span>
-        </button>
-        <button mat-menu-item [routerLink]="['/about', 'resume']">
-          <span>Resume</span>
-        </button>
-      </mat-menu>
-      -->
-
-      <mat-slide-toggle #switchLarge color="primary" (change)="toggleTheme($event)"
-        [checked]="checked"></mat-slide-toggle>
+      <!-- Theme toggle -->
+      <mat-slide-toggle id="mode-toggle" #switchLarge color="primary" (change)="toggleTheme($event)" [checked]="checked"></mat-slide-toggle>
     </div>
   </nav>
 </mat-toolbar>
 
-<div [classList]="menuOpen ? 'menu global-small' : 'menu global-small base-hidden'">
-  <div class="menu-container">
-    <mat-list>
-      <mat-list-item>
-        <a mat-stroked-button routerLink="/" (click)="toggleMenu()">Home</a>
+<!-- Menu modal to view (on small devices) -->
+<div [classList]="menuOpen ? 'menu global-small' : 'menu global-small base-hidden'" (click)="closeMenu()">
+  <div class="menu-wrapper">
+    <mat-list (click)="$event.stopPropagation()">
+      <mat-list-item *ngFor="let item of schema">
+        <!-- Route links -->
+        <button *ngIf="item.type === 'route'" mat-stroked-button [routerLink]="item.url" (click)="closeMenu()" (mouseup)="scrollTop()">{{ item.name }}</button>
+
+        <!-- External links -->
+        <a *ngIf="item.type === 'external'" target="_blank" [href]="item.url"><button mat-stroked-button>{{ item.name }}</button></a>
+
+        <!-- Sub-level menus -->
+        <div *ngIf="item.type === 'menu' && item.children != undefined && item.children.length > 0">
+          <button mat-stroked-button [matMenuTriggerFor]="child.menu">{{ item.name }}</button>
+
+          <app-nav-menu #child [items]="item.children"></app-nav-menu>
+        </div>
       </mat-list-item>
 
+      <!-- Theme toggle -->
       <mat-list-item>
-        <a mat-stroked-button routerLink="/about" (click)="toggleMenu()">About</a>
+        <mat-slide-toggle #switchSmall color="primary" (change)="toggleTheme($event)" [checked]="checked"></mat-slide-toggle>
       </mat-list-item>
 
+      <!-- Close menu -->
       <mat-list-item>
-        <a mat-stroked-button target="_blank" href="/assets/files/Ethan Baker - Full Stack Developer Resume.pdf">Resume</a>
-      </mat-list-item>
-
-      <!--
-      <mat-list-item>
-        <a mat-stroked-button routerLink="/contact" (click)="toggleMenu()">Contact</a>
-      </mat-list-item>
-      -->
-
-      <!--
-      <mat-list-item>
-        <a mat-stroked-button routerLink="/blog" (click)="toggleMenu()">Blog</a>
-      </mat-list-item>
-      -->
-
-      <!--
-      <mat-list-item>
-        <a mat-stroked-button [matMenuTriggerFor]="aboutMenuSmall">About</a>
-        <mat-menu class="menu-content" #aboutMenuSmall="matMenu">
-          <button mat-menu-item (click)="toggleMenu()" [routerLink]="['/services', 'prices']">
-            <span>Prices</span>
-          </button>
-          <button mat-menu-item (click)="toggleMenu()" [routerLink]="['/services', 'terms']">
-            <span>Terms of Service</span>
-          </button>
-        </mat-menu>
-      </mat-list-item>
-      -->
-
-      <mat-list-item>
-        <mat-slide-toggle #switchSmall color="primary" (change)="toggleTheme($event)"
-          [checked]="checked"></mat-slide-toggle>
-      </mat-list-item>
-
-      <mat-list-item>
-        <mat-icon (click)="toggleMenu()">close</mat-icon>
+        <mat-icon id="close-button" (click)="closeMenu()">close</mat-icon>
       </mat-list-item>
     </mat-list>
   </div>

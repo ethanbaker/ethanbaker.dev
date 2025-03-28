@@ -94,8 +94,8 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     margin: 0;
-    background-color: $bg-color;
-    color: $text-color;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 
     width: 100vw;
     height: fit-content;
@@ -183,7 +183,7 @@ p.base-indented {
 }
 
 p.base-underlined {
-    border-bottom: solid 2px $link-color;
+    border-bottom: solid 2px var(--link-color);
     width: max-content;
 }
 
@@ -204,12 +204,12 @@ sub.base {
 
 u.base {
     text-decoration: none;
-    border-bottom: solid 2px $link-color;
+    border-bottom: solid 2px var(--link-color);
     line-height: 1.1em;
 }
 
 code.base-inline {
-    border: solid 2px $link-color;
+    border: solid 2px var(--link-color);
 
     display: inline-block;
 
@@ -219,7 +219,7 @@ code.base-inline {
     margin: 0 0.1em 0 0.3em;
     padding: 0 0.6em 0 0.6em;
 
-    background-color: $line-color;
+    background-color: var(--line-color);
 
     @include for-tablet-portrait-up {
         margin: 0 0.1em 0 0.35em;
